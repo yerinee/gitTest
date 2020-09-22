@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+ function proc1(){
+	 now1 = new Date();
+	 now2 = new Date(98765678978);
+	 now3 = new Date("2010.02.23");
+	 now4 = new Date(2010, 01, 23)
+	 
+	 res =  " new Date() : " + now1 + "<br>";
+	 res += " new Date(98765678978) : " + now2 + "<br>";
+	 res += " new Date('2010.02.23') : " + now3 + "<br>";
+	 res += " new Date(2010, 01, 23) : " + now4 + "<br>";
+		 
+	 document.getElementById('result1').innerHTML = res;
+ 
+ }
+ 
+ function proc2(){
+	 now = new Date();
+	 sdate =   now.toLocaleString();
+	 nowdate =    now.toLocaleDateString();
+	 newtime =  now.toLocaleTimeString();
+	 
+	 res = "now : " + now + "<br>";
+	 res += "now string : "  +  sdate + "<br>";
+	 res += "now date : "  +  nowdate + "<br>";
+	 res += "now time : "  +  newtime + "<br>";
+	 
+	 document.getElementById('result2').innerHTML = res;
+ }
+
+ function proc3(){
+    now  = new Date()
+	day = now.getDay()
+	  
+	  
+	 switch(day){
+	  case 0: res = "일요일 "; break;
+	  case 1: res = "월요일 " ; break;
+	  case 2: res = "화요일 " ; break;
+	  case 3: res = "수요일 " ; break;
+	  case 4: res = "목요일 " ; break;
+	  case 5: res = "금요일 " ; break;
+	  case 6: res = "토요일 " ; break;
+	  }
+	   
+	   .innerHTML = res; */
+ }
+  
+</script>
+</head>
+<body>
+
+<div class="box">
+  <h3>1. Date객체 생성   </h3>
+  - new Date()<br>
+  - new Date(98765678978) : 1970.1.1일 기준으로 경과한 날짜<br>
+  - new Date("2010.02.23")<br>
+  - new Date(2010,01,23)<br>
+  - 월은 0월부터 시작 , 숫자로 Date 객체 생성시 하나 작은 값으로 설정 한다<br>
+  <br>
+  <input type="button" value="확인" onclick="proc1()">
+  <br><br>
+  <div id="result1"></div>
+</div>
+
+<div class="box">
+  <h3>2. Date객체 생성   </h3>
+  - now  = new Date()<br>
+  - now.toLocaleString() : 날짜와시간<br>
+  - now.toLocaleDateString() : 날짜<br>
+  - now.toLocaleTimeString() : 시간<br>
+  <br>
+  <input type="button" value="확인" onclick="proc2()">
+  <br><br>
+  <div id="result2"></div>
+</div>
+
+
+<div class="box">
+  <h3>3.요일구하기   </h3>
+  - now  = new Date()<br>
+  - day = now.getDay()
+  <br>
+  <input type="button" value="확인" onclick="proc3()">
+  <br><br>
+  <div id="result3"></div>
+</div>
+
+</body>
+</html>
